@@ -20,6 +20,8 @@ public class SaveResultMailer {
             }
         }       
     }
+    
+    
           
     public static void send(List<SaveResultMailer> sr_msg_list){
         List<Messaging.SingleEmailMessage> mail_list = new List<Messaging.SingleEmailMessage>();
@@ -67,6 +69,16 @@ public class SaveResultMailer {
         mail_list.add(mail);
         }
         Messaging.sendEmail(mail_list);
+    }
+    //Returns Map of successful IDs and failed IDs
+    public Map<String,List<ID>> getIDResults(){ 
+        
+        Map<String, List<ID>> resultIDMap = new Map<String,List<ID>>();
+        
+        resultIDMap.put('successes', this.success_ids);
+        resultIDMap.put('failures', this.failed_ids);
+        
+        return resultIDMap;
     }
         
         
