@@ -27,7 +27,7 @@ private class SaveResultMailerTest {
         
         test.startTest();
         
-        SaveResultMailer srm = new SaveResultMailer(database.insert(createTestData(1),false));
+        SaveResultMailer srm = new SaveResultMailer(database.insert(createTestData(100),false));
         srm.recipients.add(testRecipient);
         
         SaveResultMailer.send(new List<SaveResultMailer>{srm});
