@@ -10,9 +10,10 @@ private class SaveResultMailerTest {
             
             Account acct = new Account();
             
-            acct.LastName = 'Test ' + (i+1);
+            acct.Name = 'Test ' + (i+1);
             
             accountsToInsert.add(acct);
+
         }
         
         return accountsToInsert;
